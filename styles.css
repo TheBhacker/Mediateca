@@ -1,0 +1,164 @@
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* Reset básico */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+}
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111; /* Fondo base oscuro */
+    position: relative;
+    padding: 80px 40px;
+    overflow: hidden; /* Asegura que los elementos decorativos no se desborden */
+    color: #fff;
+    z-index: 1;
+}
+
+#fondo-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Mantiene el video detrás */
+}
+
+header h1 {
+    color: #fff;
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul {
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #111;
+    background: #0ff; /* Azul eléctrico para el efecto hover */
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    transform: scale(1.1); /* Ligera ampliación al pasar el ratón */
+}
+
+
+/* Título de la sección */
+.servicios-titulo {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 40px;
+}
+
+#servicios {
+    padding: 50px 20px;
+    background: #f9f9f9; /* Fondo claro */
+}
+
+
+.centrar-sec {
+    background: var(--primary);
+    padding-top: 90px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin: -43px 0 50px;
+    z-index: 1;
+    position: relative;
+}
+
+
+/* Contenedor principal de Servicios */
+#servicios {
+    padding: 50px 20px;
+    background: #333333; /* Fondo claro */
+}
+
+/* Título de la sección */
+.servicios-titulo {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Estilo para cada servicio */
+.servicio {
+    display: flex; /* Alinea texto e imagen en fila */
+    justify-content: space-between; /* Texto a la izquierda, imagen a la derecha */
+    align-items: center; /* Centra verticalmente el texto e imagen */
+    gap: 30px; /* Espacio entre texto e imagen */
+    margin-bottom: 40px; /* Espaciado entre los servicios */
+    padding-top: 90px; /* Espacio superior */
+    border-top-left-radius: 50px; /* Bordes redondeados */
+    border-top-right-radius: 50px;
+    z-index: 1; /* Mantener en frente si hay otros elementos */
+    flex-direction: row; /* Asegura que el contenido se alinee en fila */
+    flex-wrap: wrap; /* Asegura que se ajuste en pantallas pequeñas */
+    border-top: 50px;
+}
+
+/* Texto del servicio */
+.texto {
+    flex: 1;
+    text-align: left;
+    padding: 20px; /* Ajuste interno para separación del borde */
+    margin: 8%;
+}
+
+.texto h2 {
+    font-size: 28px;
+    color: #ffffff; /* Texto claro para contraste */
+    margin-bottom: 15px;
+}
+
+.texto p {
+    font-size: 16px;
+    color: rgb(255, 255, 255); /* Texto con opacidad */
+    line-height: 1.6;
+}
+
+/* Imagen del servicio */
+.imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Separación del borde */
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 600px; /* Ajusta el tamaño máximo de las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
