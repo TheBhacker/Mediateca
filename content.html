@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mediateca Tecnológica</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script> <!-- Importar Barba.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script> <!-- Importar GSAP -->
+
 </head>
 <body>
     <div id="app"> <!-- Asegúrate de envolver el contenido en el contenedor #app -->
@@ -18,7 +17,7 @@
                 </video>
                 <nav>
                     <ul>
-                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="../Landing/index.html">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#catalogo">Catálogo</a></li>
                         <li><a href="#contacto">Contacto</a></li>
@@ -63,19 +62,46 @@
                     </div>
                 </div>
             </section>            
-            <section id="catalogo">
-                <h2>Catálogo</h2>
-                <p>Explora nuestra colección de libros, películas y software.</p>
+            <section class="catalogo">
+                <h1 class="catalogo-titulo">Catálogo</h1>
+                <div class="container">
+                    <div class="box">
+                        <img src="https://cdn.pixabay.com/photo/2018/10/09/00/21/netflix-3733812_1280.jpg" alt="Image 1">
+                        <h3 class="titulo-card">Películas y Series</h3>
+                        <p class="description">Sumérgete en el mundo del cine y las series con nuestra selección de títulos icónicos y las últimas novedades para todos los gustos</p>
+                        <a href="link1.html" class="button">Saber más</a>
+                    </div>
+                    <div class="box">
+                        <img src="https://cdn.pixabay.com/photo/2018/02/28/21/44/technology-3189176_1280.jpg" alt="Image 2">
+                        <h3 class="titulo-card">Videojuegos</h3>
+                        <p class="description">Disfruta de una experiencia interactiva con nuestra variedad de videojuegos, desde aventuras clásicas hasta los títulos más modernos</p>
+                        <a href="link2.html" class="button">Saber más</a>
+                    </div>
+                    <div class="box">
+                        <img src="https://cdn.pixabay.com/photo/2020/05/23/20/08/books-5211309_1280.jpg" alt="Image 3">
+                        <h3 class="titulo-card">Libros</h3>
+                        <p class="description">Explora nuestra amplia colección de libros, desde clásicos literarios hasta guías tecnológicas, diseñados para inspirarte y enriquecer tus conocimientos</p>
+                        <a href="link3.html" class="button">Saber más</a>
+                    </div>
+                </div>
             </section>
-            <section id="contacto">
-                <h2>Contacto</h2>
-                <p>¡Visítanos o escríbenos para más información!</p>
+            <section id="ai-helper" class="ai-section">
+                <h2>Asistente de Redacción</h2>
+                <p>Escribe tu idea o consulta en el cuadro de texto, y nuestro asistente generará contenido útil para ti.</p>
+                <div class="ai-box">
+                    <textarea id="user-input" placeholder="Escribe tu idea aquí..."></textarea>
+                    <div class="response-box">
+                        <p id="ai-response">La respuesta generada por la IA aparecerá aquí...</p>
+                    </div>
+                </div>
+                <button id="generate-btn">Generar Texto</button>
             </section>
+                                       
+            <script src="../Javascript/api-ai.js"></script>
         </main>
         <footer>
-            <p>&copy; 2024 Mediateca Tecnológica. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Mediateca Tecnológica. Todos los derechos reservados.</p>  
         </footer>
     </div> <!-- Cierra el contenedor #app -->
-    <script src="script.js"></script> <!-- Asegúrate de que script.js esté aquí también -->
 </body>
 </html>
