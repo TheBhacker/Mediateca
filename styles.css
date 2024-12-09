@@ -69,15 +69,6 @@ nav ul li a:hover {
 }
 
 
-/* Título de la sección */
-.servicios-titulo {
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: #111;
-    margin-bottom: 40px;
-}
-
 
 .centrar-sec {
     background: var(--primary);
@@ -93,52 +84,59 @@ nav ul li a:hover {
 /* Contenedor principal de Servicios */
 #servicios {
     background: linear-gradient(to top, #000000, #2575fc);
-    margin-bottom: -40px;
+    margin-bottom: -40px; /* Reduce el margen inferior */
 }
 
 /* Título de la sección */
 .servicios-titulo {
     text-align: center;
-    font-size: 36px;
+    font-size: 2.5rem; 
     font-weight: bold;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 100px; 
+    margin-top: 75px;
 }
 
-/* Estilo para cada servicio */
+/* Contenedor principal */
+#servicios {
+    background: linear-gradient(to top, #000000, #2575fc);
+    padding: 30px 20px;
+}
+
+/* Cada servicio */
 .servicio {
-    display: flex; /* Alinea texto e imagen en fila */
-    justify-content: space-between; /* Texto a la izquierda, imagen a la derecha */
-    align-items: center; /* Centra verticalmente el texto e imagen */
-    gap: 30px; /* Espacio entre texto e imagen */
-    margin-bottom: 40px; /* Espaciado entre los servicios */
-    padding-top: 90px; /* Espacio superior */
-    border-top-left-radius: 50px; /* Bordes redondeados */
-    border-top-right-radius: 50px;
-    z-index: 1; /* Mantener en frente si hay otros elementos */
-    flex-direction: row; /* Asegura que el contenido se alinee en fila */
-    flex-wrap: wrap; /* Asegura que se ajuste en pantallas pequeñas */
-    border-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px; /* Aumentar el espacio entre el texto y la imagen */
+    margin-bottom: 70px; /* Espacio entre cada bloque de servicio */
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0; /* Inicialmente ocultamos los servicios */
+    transform: translateX(100px); /* Desplazamos los servicios fuera de la vista */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Transición suave */
 }
 
 /* Texto del servicio */
 .texto {
     flex: 1;
     text-align: left;
-    padding: 20px; /* Ajuste interno para separación del borde */
-    margin: 8%;
+    padding: 10px;
+    max-width: 400px; 
 }
 
 .texto h2 {
-    font-size: 28px;
-    color: #ffffff; /* Texto claro para contraste */
-    margin-bottom: 15px;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .texto p {
-    font-size: 16px;
-    color: rgb(255, 255, 255); /* Texto con opacidad */
-    line-height: 1.6;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
 }
 
 /* Imagen del servicio */
@@ -147,15 +145,23 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Separación del borde */
+    padding: 10px;
+    max-width: 400px; 
 }
 
 .imagen img {
     width: 100%;
-    max-width: 600px; /* Ajusta el tamaño máximo de las imágenes */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+    max-width: 400px; /* Aumentamos el tamaño máximo de la imagen */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* Animación de aparición desde el lateral */
+.servicio.appear {
+    opacity: 1; /* Hacemos visible el servicio */
+    transform: translateX(0); /* Lo movemos a su posición original */
+}
+
 
 /* General */
 * {
@@ -166,42 +172,62 @@ nav ul li a:hover {
 
 
 
-/* Fondo de sección */
+/* Fondo de la sección */
 .catalogo {
     background: linear-gradient(to bottom, #000000, #4400ff);
     padding: 50px 0;
     text-align: center;
+    opacity: 1; /* Aseguramos que la sección comience visible */
+    transform: translateY(0); /* Empezamos sin desplazamiento */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Transición suave */
 }
 
-.catalogo-titulo{
+/* Título de la sección */
+.catalogo-titulo {
     color: white;
-    margin-bottom: 50px;
-    font-size: 30px;
+    margin-bottom: 75px;
+    font-size: 2.5rem;
+    margin-top: 150px;
 }
 
+/* Contenedor de los elementos */
 .container {
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    margin-left: 175px;
+    margin-right: 175px;
+    margin-bottom: 75px;
 }
 
+/* Caja de cada elemento */
 .box {
     border-radius: 20px;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s;
+    opacity: 0; /* Iniciar con opacidad 0 para la animación */
+    transform: translateY(50px); /* Desplazado hacia abajo para el efecto */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Animación suave */
 }
 
+/* Animación al pasar el ratón */
 .box:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); 
 }
 
+/* Imagen dentro de la caja */
 img {
     width: 100%;
     height: auto;
     border-radius: 20px;
+    transition: transform 0.3s ease; /* Transición suave para el cambio de escala */
 }
 
+/* Cuando la imagen es hover, la ampliamos */
+img:hover {
+    transform: scale(1.1); /* Amplía la imagen al 110% */
+}
+
+/* Botón dentro de la caja */
 .button {
     display: inline-block;
     margin-top: 10px;
@@ -215,27 +241,200 @@ img {
 
 .button:hover {
     color: #111;
-    background: #0ff; /* Azul eléctrico para el efecto hover */
+    background: #0ff;
     box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-    transform: scale(1.1); /* Ligera ampliación al pasar el ratón */
+    transform: scale(1.1);
 }
 
-.titulo-card{
+/* Título dentro de la caja */
+.titulo-card {
     font-size: 30px;
     color: white;
     margin: 15px;
 }
 
-.description{
+/* Descripción dentro de la caja */
+.description {
     font-size: 16px;
     color: white;
     margin: 20px;
 }
 
-/* Contenedor principal de la sección */
+
+
+
+/* Sección principal */
+.memoria {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #4400ff, #67a3bb);
+    text-align: center;
+    display: flex; /* Activa el modelo flex */
+    flex-direction: column; /* Alinea el contenido en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+}
+
+/* Título de la sección */
+.memoria-titulo {
+    margin-top: -100px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 75px;
+}
+
+/* Contenido */
+.memoria-content {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Asegura la alineación vertical */
+    gap: 30px;
+    flex-wrap: wrap; /* Adapta el contenido en pantallas pequeñas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra horizontalmente dentro del contenedor */
+}
+
+/* Estilo base para la imagen */
+.memoria-preview img {
+    max-width: 600px; /* Tamaño inicial */
+    border-radius: 10px; /* Bordes redondeados */
+    height: 700px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el ratón */
+.memoria-preview img:hover {
+    transform: scale(1.1); /* Escala la imagen al 110% */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+/* Botones o acciones */
+.memoria-action {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+
+  
+/* From Uiverse.io by jamik-dev */ 
+.Download-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 12px 20px;
+    color: white;
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em rgba(59, 48, 78, 0.527);
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+  }
+  
+  .Download-button svg {
+    margin-right: 8px;
+    width: 25px;
+  }
+  
+  .Download-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #3b82f6;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+  
+  .Download-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #3b82f6;
+  }
+  
+  .Download-button::before {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0;
+    transition: all 0.2s;
+  }
+  
+  .Download-button::after {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0;
+    transition: all 0.2s;
+  }
+  
+  .Download-button:hover::before,
+  .Download-button:hover::after {
+    height: 60%;
+  }
+  
+  .Download-button:hover::before {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transform: translate(5px, -15px) rotate(45deg);
+  }
+  
+  .Download-button:hover::after {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transform: translate(-5px, 15px) rotate(45deg);
+  }
+  
+
+  .dashboard-section{
+    background: linear-gradient(to bottom, #67a3bb, #5ed2d6);
+    margin: 2rem auto;
+    text-align: center;
+    padding: 1rem;
+    margin-top: -5px;
+    margin-bottom: -50px;
+  }
+  
+  #dashboard h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 100px;
+    margin-top: 150px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .chart-container {
+    flex: 1 1 45%; /* Cada gráfica ocupará el 45% del ancho */
+    max-width: 500px;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenedor principal de la sección */
 .ai-section {
     padding: 60px 20px;
-    background: linear-gradient(to bottom, #4400ff, #000000);
+    background: linear-gradient(to bottom, #5ed2d6, #000000);
     color: #ffffff; /* Texto oscuro */
     display: flex;
     flex-direction: column;
@@ -249,6 +448,11 @@ img {
     font-weight: bold;
     color: #ffffff; /* Color fuerte para el título */
     margin-bottom: 50px;
+}
+
+.ia-titulo{
+    margin-top: 200px;
+    margin-bottom: 75px;
 }
 
 .ai-section p {
@@ -265,7 +469,7 @@ img {
     gap: 20px;
     max-width: 900px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 #user-input, .response-box {
@@ -316,6 +520,7 @@ img {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 200px;
 }
 
 #ai-response{
@@ -341,4 +546,9 @@ img {
     #user-input, .response-box {
         height: auto; /* Ajusta la altura automáticamente */
     }
+}
+
+.footer-fondo{
+    background-color: #000000;
+    color: white;
 }

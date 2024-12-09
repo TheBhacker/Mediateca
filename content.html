@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mediateca Tecnológica</title>
     <link rel="stylesheet" href="../CSS/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app"> <!-- Asegúrate de envolver el contenido en el contenedor #app -->
@@ -20,19 +21,21 @@
                         <li><a href="../Landing/index.html">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#catalogo">Catálogo</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#memoria">Memória</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#ai-helper">Inteligencia Artificial</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main>
             <section id="servicios" class="centrar-sec">
-                <h1 class="servicios-titulo">Servicios</h1>
+                <h1 class="servicios-titulo">Servicios 💻</h1>
             
                 <!-- Primer servicio -->
                 <div class="servicio">
                     <div class="texto">
-                        <h2>Préstamo de Dispositivos</h2>
+                        <h2>Préstamo de Dispositivos 📱</h2>
                         <p>Ofrecemos un amplio catálogo de dispositivos tecnológicos, como portátiles, tablets y cámaras, disponibles para préstamo a estudiantes y docentes.</p>
                     </div>
                     <div class="imagen">
@@ -46,7 +49,7 @@
                         <img src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557399_1280.jpg" alt="Formación tecnológica">
                     </div>
                     <div class="texto">
-                        <h2>Formación Tecnológica</h2>
+                        <h2>Formación Tecnológica 👨‍🏫</h2>
                         <p>Organizamos talleres y cursos para aprender desde programación básica hasta manejo avanzado de herramientas tecnológicas.</p>
                     </div>
                 </div>
@@ -54,16 +57,17 @@
                 <!-- Tercer servicio -->
                 <div class="servicio">
                     <div class="texto">
-                        <h2>Espacios Colaborativos</h2>
+                        <h2>Espacios Colaborativos 🔬</h2>
                         <p>Disponemos de áreas de trabajo equipadas con la tecnología más moderna, diseñadas para fomentar la creatividad y la colaboración.</p>
                     </div>
                     <div class="imagen">
                         <img src="https://cdn.pixabay.com/photo/2021/12/20/12/45/woman-6882918_1280.jpg" alt="Espacios colaborativos">
                     </div>
                 </div>
+                
             </section>            
-            <section class="catalogo">
-                <h1 class="catalogo-titulo">Catálogo</h1>
+            <section id="catalogo" class="catalogo">
+                <h1 class="catalogo-titulo">Catálogo 📋</h1>
                 <div class="container">
                     <div class="box">
                         <img src="https://cdn.pixabay.com/photo/2018/10/09/00/21/netflix-3733812_1280.jpg" alt="Image 1">
@@ -85,8 +89,52 @@
                     </div>
                 </div>
             </section>
+            <section id="memoria" class="memoria">
+                <h1 class="memoria-titulo">Memória de la Mediateca 📑</h1>
+                <div class="memoria-content">
+                  <div class="memoria-preview">
+                    <img src="https://raw.githubusercontent.com/TheBhacker/Mediateca/refs/heads/main/mediateca-preview.png" alt="Vista previa de la memoria de la mediateca">
+                  </div>
+                  <a class="Download-button" href="https://drive.google.com/uc?export=download&id=1SFjEAWuLZeyEOziyyO5gnq90uiaaVl2Q" download>
+                    <svg
+                      viewBox="0 0 640 512"
+                      width="20"
+                      height="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="white"
+                        d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-167l80 80c9.4 9.4 24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-39 39V184c0-13.3-10.7-24-24-24s-24 10.7-24 24V318.1l-39-39c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9z"
+                      ></path>
+                    </svg>
+                    <span>Download</span>
+                  </a>
+                </div>
+              </section>              
+            <section id="dashboard" class="dashboard-section">
+                <h2>Dashboard Interactivo 📊</h2>
+                <div class="row">
+                  <div class="chart-container">
+                    <canvas id="chartGenero"></canvas>
+                  </div>
+                  <div class="chart-container">
+                    <canvas id="chartDepartamento"></canvas>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="chart-container">
+                    <canvas id="chartServicios"></canvas>
+                  </div>
+                  <div class="chart-container">
+                    <canvas id="chartTematica"></canvas>
+                  </div>
+                </div>           
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script src="../Javascript/dashboard.js"></script>
+                <script src="../Javascript/IntersectionObserverServicios.js"></script>
+            </section>                                                                    
             <section id="ai-helper" class="ai-section">
-                <h2>Asistente de Redacción</h2>
+                <h2 class="ia-titulo">Asistente de Redacción 🤖</h2>
                 <p>Escribe tu idea o consulta en el cuadro de texto, y nuestro asistente generará contenido útil para ti.</p>
                 <div class="ai-box">
                     <textarea id="user-input" placeholder="Escribe tu idea aquí..."></textarea>
@@ -96,10 +144,10 @@
                 </div>
                 <button id="generate-btn">Generar Texto</button>
             </section>
-                                       
+            <script src="../Javascript/IntersectionObserver.js"></script>                          
             <script src="../Javascript/api-ai.js"></script>
         </main>
-        <footer>
+        <footer class="footer-fondo">
             <p>&copy; 2024 Mediateca Tecnológica. Todos los derechos reservados.</p>  
         </footer>
     </div> <!-- Cierra el contenedor #app -->

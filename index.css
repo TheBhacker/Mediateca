@@ -71,3 +71,20 @@ body, html {
     transform: scale(1.1);
     background: #00d8ff; /* Color futurista */
 }
+
+/* Animación de entrada (desvanecimiento y deslizamiento desde abajo) */
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Comienza desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Llega a la posición final */
+    }
+}
+
+/* Aplica la animación a todo el contenido de la página */
+.page-transition {
+    animation: slideInFromBottom 1s ease-out;
+}
