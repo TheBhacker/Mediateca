@@ -1,0 +1,677 @@
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Inicialmente, las páginas estarán ocultas con clip-path */
+#container {
+    clip-path: inset(0 0 100% 0); /* Página oculta por debajo */
+    transition: clip-path 2.5s cubic-bezier(.25, 1, .30, 1);
+  }
+  
+  #container.fade-in {
+    clip-path: inset(0 0 0 0); /* Página completamente visible */
+  }
+
+/* Reset básico */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+}
+
+/* Estilos para las transiciones */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111; /* Fondo base oscuro */
+    position: relative;
+    padding: 150px 40px;
+    overflow: hidden; /* Asegura que los elementos decorativos no se desborden */
+    color: #fff;
+    z-index: 1;
+}
+
+#fondo-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Mantiene el video detrás */
+}
+
+header h1 {
+    color: #fff;
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul {
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #111;
+    background: #0ff; /* Azul eléctrico para el efecto hover */
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    transform: scale(1.1); /* Ligera ampliación al pasar el ratón */
+}
+
+
+
+.centrar-sec {
+    background: var(--primary);
+    padding-top: 90px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin: -43px 0 50px;
+    z-index: 1;
+    position: relative;
+}
+
+
+/* Contenedor principal de Servicios */
+#servicios {
+    background: linear-gradient(to top, #000000, #2575fc);
+    margin-bottom: -40px; /* Reduce el margen inferior */
+}
+
+/* Título de la sección */
+.servicios-titulo {
+    text-align: center;
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 100px; 
+    margin-top: 75px;
+}
+
+/* Contenedor principal */
+#servicios {
+    background: linear-gradient(to top, #000000, #2575fc);
+    padding: 30px 20px;
+}
+
+/* Cada servicio */
+.servicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px; /* Aumentar el espacio entre el texto y la imagen */
+    margin-bottom: 70px; /* Espacio entre cada bloque de servicio */
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0; /* Inicialmente ocultamos los servicios */
+    transform: translateX(100px); /* Desplazamos los servicios fuera de la vista */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Transición suave */
+}
+
+/* Texto del servicio */
+.texto {
+    flex: 1;
+    text-align: left;
+    padding: 10px;
+    max-width: 400px; 
+}
+
+.texto h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.texto p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+/* Imagen del servicio */
+.imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    max-width: 400px; 
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 400px; /* Aumentamos el tamaño máximo de la imagen */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de aparición desde el lateral */
+.servicio.appear {
+    opacity: 1; /* Hacemos visible el servicio */
+    transform: translateX(0); /* Lo movemos a su posición original */
+}
+
+
+/* General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Fondo de la sección */
+.catalogo {
+    background: linear-gradient(to bottom, #000000, #4400ff);
+    padding: 50px 0;
+    text-align: center;
+    opacity: 1; /* Aseguramos que la sección comience visible */
+    transform: translateY(0); /* Empezamos sin desplazamiento */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Transición suave */
+}
+
+/* Título de la sección */
+.catalogo-titulo {
+    color: white;
+    margin-bottom: 75px;
+    font-size: 2.5rem;
+    margin-top: 150px;
+}
+
+/* Contenedor de los elementos */
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 175px;
+    margin-right: 175px;
+    margin-bottom: 75px;
+}
+
+/* Caja de cada elemento */
+.box {
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    opacity: 0; /* Iniciar con opacidad 0 para la animación */
+    transform: translateY(50px); /* Desplazado hacia abajo para el efecto */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Animación suave */
+}
+
+/* Animación al pasar el ratón */
+.box:hover {
+    transform: scale(1.05); 
+}
+
+/* Imagen dentro de la caja */
+.img-amplia {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease; /* Transición suave para el cambio de escala */
+}
+
+/* Cuando la imagen es hover, la ampliamos */
+.img-amplia:hover {
+    transform: scale(1.1); /* Amplía la imagen al 110% */
+}
+
+/* Botón dentro de la caja */
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #001aff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    color: #111;
+    background: #0ff;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    transform: scale(1.1);
+}
+
+/* Título dentro de la caja */
+.titulo-card {
+    font-size: 30px;
+    color: white;
+    margin: 15px;
+}
+
+/* Descripción dentro de la caja */
+.description {
+    font-size: 16px;
+    color: white;
+    margin: 20px;
+}
+
+
+
+
+/* Sección principal */
+.memoria {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #4400ff, #67a3bb);
+    text-align: center;
+    display: flex; /* Activa el modelo flex */
+    flex-direction: column; /* Alinea el contenido en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+}
+
+/* Título de la sección */
+.memoria-titulo {
+    margin-top: -100px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 75px;
+}
+
+/* Contenido */
+.memoria-content {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Asegura la alineación vertical */
+    gap: 30px;
+    flex-wrap: wrap; /* Adapta el contenido en pantallas pequeñas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra horizontalmente dentro del contenedor */
+}
+
+/* Estilo base para la imagen */
+.memoria-preview img {
+    max-width: 600px; /* Tamaño inicial */
+    border-radius: 10px; /* Bordes redondeados */
+    height: 700px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el ratón */
+.memoria-preview img:hover {
+    transform: scale(1.1); /* Escala la imagen al 110% */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+/* Botones o acciones */
+.memoria-action {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+
+  
+/* From Uiverse.io by jamik-dev */ 
+.Download-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 12px 20px;
+    color: white;
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em rgba(59, 48, 78, 0.527);
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+  }
+  
+  .Download-button svg {
+    margin-right: 8px;
+    width: 25px;
+  }
+  
+  .Download-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #3b82f6;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+  
+  .Download-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #3b82f6;
+  }
+  
+  .Download-button::before {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0;
+    transition: all 0.2s;
+  }
+  
+  .Download-button::after {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0;
+    transition: all 0.2s;
+  }
+  
+  .Download-button:hover::before,
+  .Download-button:hover::after {
+    height: 60%;
+  }
+  
+  .Download-button:hover::before {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transform: translate(5px, -15px) rotate(45deg);
+  }
+  
+  .Download-button:hover::after {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transform: translate(-5px, 15px) rotate(45deg);
+  }
+  
+
+  .dashboard-section{
+    background: linear-gradient(to bottom, #5ed6c2, #62d65e);
+    margin: 2rem auto;
+    text-align: center;
+    padding: 1rem;
+    margin-top: -5px;
+    margin-bottom: -50px;
+  }
+  
+  #dashboard h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 100px;
+    margin-top: 150px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .chart-container {
+    flex: 1 1 45%; /* Cada gráfica ocupará el 45% del ancho */
+    max-width: 500px;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+/* Sección principal */
+.carousel-section {
+    width: 100%;
+    padding: 40px 0;
+    background: linear-gradient(to bottom, #67a3bb, #5ed6c2);
+    text-align: center;
+}
+
+/* Título principal de la sección */
+.instalaciones-titulo {
+    font-size: 2.5rem;
+    color: #ffffff; 
+    margin-bottom: 50px;
+}
+
+/* Contenedor del carrusel */
+.carousel-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 1000px; /* Máximo tamaño del carrusel */
+    margin: 0 auto; /* Centrar horizontalmente */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Carrusel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada diapositiva */
+.carousel-slide {
+    flex: 0 0 100%;
+    position: relative;
+    text-align: center;
+}
+
+/* Imagen de la diapositiva */
+/* Imagen de la diapositiva */
+.carousel-slide img {
+    width: 100%; /* Ocupar todo el ancho del carrusel */
+    height: 550px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Recorta la imagen para ajustarse al contenedor sin deformarse */
+    border-radius: 15px; /* Bordes redondeados */
+    display: block; /* Evita espacios adicionales debajo de la imagen */
+}
+
+
+/* Título de cada instalación */
+.slide-title {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: #fff;
+    background: rgb(0, 255, 213);
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Botones de navegación */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+    left: 15px;
+}
+
+.carousel-control.next {
+    right: 15px;
+}
+
+.imagen-carusel{
+    border-radius: 15px;
+}
+
+
+
+  /* Contenedor principal de la sección */
+.ai-section {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #62d65e, #000000);
+    color: #ffffff; /* Texto oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Título de la sección */
+.ai-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Color fuerte para el título */
+    margin-bottom: 50px;
+}
+
+.ia-titulo{
+    margin-top: 200px;
+    margin-bottom: 75px;
+}
+
+.ai-section p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+/* Contenedor para los cuadros */
+.ai-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#user-input, .response-box {
+    flex: 1;
+    padding: 20px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efectos al enfocar */
+#user-input:focus, .response-box:hover {
+    border-color: #00a65a;
+    box-shadow: 0 4px 12px rgba(0, 166, 90, 0.3); /* Color destacado */
+}
+
+/* Cuadro de texto */
+#user-input {
+    height: 200px;
+    resize: none;
+    outline: none;
+}
+
+/* Respuesta */
+.response-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: 1.1rem;
+    color: #333;
+    white-space: pre-wrap; /* Mantiene saltos de línea */
+    overflow-y: auto; /* Si el texto es largo, añade scroll */
+    height: 200px;
+}
+
+/* Botón */
+#generate-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #00a65a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 200px;
+}
+
+#ai-response{
+    color:#000000;
+}
+
+#generate-btn:hover {
+    background-color: #008c4c;
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+#generate-btn:active {
+    transform: scale(0.95); /* Efecto al hacer clic */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .ai-box {
+        flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+        gap: 20px;
+    }
+
+    #user-input, .response-box {
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+}
+
+.footer-fondo{
+    background-color: #000000;
+    color: white;
+    text-align: center;
+}
